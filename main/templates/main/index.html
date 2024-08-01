@@ -1,14 +1,32 @@
 {% extends "main/base.html" %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+{% load static %}
 
-</head>
-<body>
-    
-</body>
-</html>
+{% block content %}
+    <div class="hero-section">
+        <img src="{% static 'main/bgcallaction.jpg' %}" alt="Klocki">
+        <div class="hero-text">
+            <h1>Zalegają Ci klocki?</h1>
+            <button class="btn-cta">TAK</button>
+        </div>
+    </div>
+            <div class="header-text">
+                <h2>Let the fun be inspiration for science</h2>
+                <p>"Niech zabawa będzie inspiracją do nauki"</p>
+            </div>
+            <div id="choice-section" class = "center-content">
+                <h3>Zdecyduj jak rozwiążesz problem!</h3>
+            </div>
+            <div class="option-section">
+                <div class="option">
+                    <h4>Zarób na swoich zestawach!</h4>
+                    <p>Wyślij nam swoje zestawy LEGO, a my je złożymy, wycenimy i odeślemy Ci wycenę. W ten sposób możesz zarobić na swoich zestawach!</p>
+                    <button class="btn-choose">WYBIERZ</button>
+                </div>
+                <div class="option">
+                    <h3>&nbsp;</h3>
+                    <h4>Przekaż je naszej fundacji!</h4>
+                    <p>Jeśli chcesz szybko pozbyć się klocków LEGO, przekaż je naszej fundacji.</p>
+                    <button class="btn-choose">WYBIERZ</button>
+                </div>
+            </div>
+{% endblock %}
