@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+.navbar {
+  background-color: #0a526d;
+}
+.navbar-brand {
+  color: #fff;
+}
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+}
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.hero-section img {
+  width: 100%;
+  height: auto;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 20%;
+}
+.hero-text h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+.btn-cta {
+  background-color: red;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+.header-text {
+  text-align: center;
+  margin: 20px 0;
+}
+.header-text h2 {
+  color: #0056b3;
+}
+.header-text p {
+  font-style: italic;
+  color: #dc3545;
+}
+.option-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.option {
+  flex: 1;
+  padding: 20px;
+  color: #333;
+}
+.option:first-child {
+  background-color: #d6dbe0;
+}
+.option:last-child {
+  background-color: #2c5d76;
+  color: white;
+}
+.option h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.option h4 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.option p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.option .btn-choose {
+  display: block;
+  margin: 0 auto;
+  background-color: red;
+  width: 100px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+}
+.center-content {
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+.vertical-stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.stepper-head {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.stepper-head-icon {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.stepper-head-text {
+  font-size: 14px;
+}
+
+.stepper-line {
+  width: 2px;
+  height: 40px;
+  background-color: #007bff;
+  margin-left: 14px; /* Align with the center of the icon */
+}

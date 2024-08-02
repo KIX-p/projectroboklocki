@@ -1,32 +1,392 @@
-{% extends "main/base.html" %}
-{% load static %}
+{% extends "main/base.html" %} {% load static %} {% block content %}
 
-{% block content %}
-    <div class="hero-section">
-        <img src="{% static 'main/bgcallaction.jpg' %}" alt="Klocki">
-        <div class="hero-text">
-            <h1>Zalegają Ci klocki?</h1>
-            <button class="btn-cta">TAK</button>
+<!-- Hero Section -->
+<div class="hero-section">
+  <img src="{% static 'main/bgcallaction.jpg' %}" alt="Klocki" />
+  <div class="hero-text">
+    <h1>Zalegają Ci klocki?</h1>
+    <a href="#scroll" class="btn btn-primary btn-cta">TAK</a>
+  </div>
+</div>
+
+<!-- Flow -->
+<div class="header-text">
+  <div id="scroll"></div>
+  <h2>Let the fun be inspiration for science</h2>
+  <p>"Niech zabawa będzie inspiracją do nauki"</p>
+</div>
+
+<!-- Choice Section -->
+<div id="choice-section" class="center-content margin-bottom: 0;">
+  <h3>Zdecyduj jak rozwiążesz problem!</h3>
+</div>
+
+<!-- Option Section -->
+<div class="option-section" style="margin-bottom: 0; margin-top: 0">
+  <!-- Option 1: Zarób na swoich zestawach -->
+  <div class="option">
+    <h4>Zarób na swoich zestawach!</h4>
+    <p>
+      Wyślij nam swoje zestawy LEGO, a my je złożymy, wycenimy i odeślemy Ci
+      wycenę. W ten sposób możesz zarobić na swoich zestawach!
+    </p>
+    <a
+      href="#"
+      class="btn-choose mt-auto"
+      data-toggle="modal"
+      data-target="#stepModal"
+      >WYBIERZ</a
+    >
+
+    <!-- Modal -->
+    <div class="modal fade" id="stepModal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- Modal Body -->
+          <div class="d-flex">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="vertical-stepper">
+                    <div class="stepper-head" tabindex="0">
+                      <span class="stepper-head-icon">1</span>
+                      <span class="stepper-head-text">Personal Information</span>
+                    </div>
+                    <div class="stepper-line"></div>
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon">2</span>
+                      <span class="stepper-head-text">Education</span>
+                    </div>
+                    <div class="stepper-line"></div>
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon">3</span>
+                      <span class="stepper-head-text">Work Experience</span>
+                    </div>
+                    <div class="stepper-line"></div>
+                    <div class="stepper-head">
+                      <span class="stepper-head-icon">4</span>
+                      <span class="stepper-head-text">User Photo</span>
+                    </div>
+                  </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content step-content">
+              <!-- Personal Information -->
+              <div class="tab-pane container active" id="personalInformation">
+                <h5>Your Personal Information</h5>
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="firstName">First Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        placeholder="First Name"
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="lastName">Last Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="phoneNumber">Phone Number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="phoneNumber"
+                        placeholder="Phone Number"
+                      />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="emailAddress">E-mail Address</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="emailAddress"
+                        placeholder="E-mail Address"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="country">Select Country</label>
+                      <select id="country" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Country 1</option>
+                        <option>Country 2</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="city">Select City</label>
+                      <select id="city" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>City 1</option>
+                        <option>City 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="nextStep(2)"
+                  >
+                    Next Step
+                  </button>
+                </form>
+              </div>
+
+              <!-- Education -->
+              <div class="tab-pane container fade" id="education">
+                <h5>Education</h5>
+                <!-- Add your education form fields here -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="nextStep(3)"
+                >
+                  Next Step
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="prevStep(1)"
+                >
+                  Back
+                </button>
+              </div>
+
+              <!-- Work Experience -->
+              <div class="tab-pane container fade" id="workExperience">
+                <h5>Work Experience</h5>
+                <!-- Add your work experience form fields here -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="nextStep(4)"
+                >
+                  Next Step
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="prevStep(2)"
+                >
+                  Back
+                </button>
+              </div>
+
+              <!-- User Photo -->
+              <div class="tab-pane container fade" id="userPhoto">
+                <h5>User Photo</h5>
+                <!-- Add your user photo form fields here -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-dismiss="modal"
+                >
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  onclick="prevStep(3)"
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-            <div class="header-text">
-                <h2>Let the fun be inspiration for science</h2>
-                <p>"Niech zabawa będzie inspiracją do nauki"</p>
+  </div>
+
+  <!-- Option 2: Przekaż je naszej fundacji -->
+  <div class="option d-flex flex-column">
+    <h4>Przekaż je naszej fundacji!</h4>
+    <p>
+      Jeśli chcesz szybko pozbyć się klocków LEGO, przekaż je naszej fundacji.
+    </p>
+    <a href="{% url 'form2' %}" class="btn-choose mt-auto">WYBIERZ</a>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="py-5 bg-dark text-white" style="margin-top: 0" id="scrollfooter">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-12">
+        <!-- Google Maps Embed -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.816213229239!2d16.984051!3d51.111850999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc1b02a101e93%3A0x92ff44b7e53f22df!2sRoboklocki%C2%AE!5e0!3m2!1suk!2spl!4v1722542441465!5m2!1suk!2spl"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="h-100 w-100"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8">
+        <p class="text-center">ROBOKLOCKI SP Z O.O.</p>
+        <div class="row">
+          <!-- Wrocław -->
+          <div class="col-4">
+            <h5>WROCŁAW</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                UL. A.Ostrowskiego 9, 53-238 Wrocław
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">
+                Kierownik Projektu
+              </li>
+              <li class="nav-item mb-2" style="font-size: small">
+                Małgorzata Wiórek
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">Telefon</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                531 488 885/71 307 10 86
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">Mail</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                bok@roboklocki.pl
+              </li>
+            </ul>
+          </div>
+          <!-- Brzeg -->
+          <div class="col-4">
+            <h5>BRZEG</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                UL. Długa 43 (Rynek), 49-306 Brzeg
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">
+                Koordynator Ds. Zajęć
+              </li>
+              <li class="nav-item mb-2" style="font-size: small">
+                Tomasz Urbaniak
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">Telefon</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                790 523 333/77 300 04 65
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">Mail</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                turbaniak@roboklocki.pl
+              </li>
+            </ul>
+          </div>
+          <!-- Wieruszów -->
+          <div class="col-4">
+            <h5>WIERUSZÓW</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-2" style="font-size: small">
+                98-400 Wieruszów
+              </li>
+              <li class="nav-item mb-2" style="font-weight: bold">
+                Koordynator Ds. Zajęć
+              </li>
+              <li class="nav-item mb-2" style="font-size: small">
+                Patrycja Karkoszka
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- Contact Form -->
+        <section class="text-center">
+          <div class="w-100">
+            <h3 class="mb-5">Wyślij nam wiadomość</h3>
+            <div class="row">
+              <div class="col-lg-12">
+                <form>
+                  <div class="mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="text"
+                        id="form3Example1"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form3Example1"
+                        >Imię i Nazwisko:</label
+                      >
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input
+                        type="email"
+                        id="form3Example2"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form3Example2"
+                        >Adres email:</label
+                      >
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <select id="form3Example3" class="form-select">
+                        <option value="" disabled selected>
+                          Wybierz placówkę
+                        </option>
+                        <option value="Wrocław">Wrocław</option>
+                        <option value="Brzeg">Brzeg</option>
+                        <option value="Wieruszów">Wieruszów</option>
+                      </select>
+                      <label class="form-label" for="form3Example3"
+                        >Sprawa dotyczy placówki w:</label
+                      >
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <textarea
+                        class="form-control"
+                        id="form4Example3"
+                        rows="4"
+                      ></textarea>
+                      <label class="form-label" for="form4Example3"
+                        >Treść wiadomości</label
+                      >
+                    </div>
+                  </div>
+                  <div class="text-center text-md-start">
+                    <button
+                      type="submit"
+                      data-mdb-button-init
+                      data-mdb-ripple-init
+                      class="btn btn-danger w-100 mb-5 mb-md-0"
+                    >
+                      Wyślij
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div id="choice-section" class = "center-content">
-                <h3>Zdecyduj jak rozwiążesz problem!</h3>
-            </div>
-            <div class="option-section">
-                <div class="option">
-                    <h4>Zarób na swoich zestawach!</h4>
-                    <p>Wyślij nam swoje zestawy LEGO, a my je złożymy, wycenimy i odeślemy Ci wycenę. W ten sposób możesz zarobić na swoich zestawach!</p>
-                    <button class="btn-choose">WYBIERZ</button>
-                </div>
-                <div class="option">
-                    <h3>&nbsp;</h3>
-                    <h4>Przekaż je naszej fundacji!</h4>
-                    <p>Jeśli chcesz szybko pozbyć się klocków LEGO, przekaż je naszej fundacji.</p>
-                    <button class="btn-choose">WYBIERZ</button>
-                </div>
-            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</footer>
+
 {% endblock %}
