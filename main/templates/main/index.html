@@ -1,9 +1,13 @@
 {% extends "main/base.html" %} {% load static %} {% block content %}
 <!-- Hero Section -->
-<div class="hero-section">
-  <img src="{% static 'main/media/bgcallaction.jpg' %}" alt="Klocki" />
-  <div class="hero-text">
-    <h1>Zalegają Ci klocki?</h1>
+<div class="hero-section position-relative">
+  <img
+    src="{% static 'main/media/bgcallaction.jpg' %}"
+    alt="Klocki"
+    class="img-fluid w-100"
+  />
+  <div class="hero-text position-absolute text-center">
+    <h1 class="display-4">Zalegają Ci klocki?</h1>
     <a href="#scroll" class="btn btn-primary btn-cta">TAK</a>
   </div>
 </div>
@@ -16,22 +20,26 @@
 </div>
 
 <!-- Choice Section -->
-<div id="choice-section" class="center-content margin-bottom: 0;">
+<div id="choice-section" class="center-content">
   <h3>Zdecyduj jak rozwiążesz problem!</h3>
 </div>
 
 <!-- Option Section -->
-<div class="option-section" style="margin-bottom: 0; margin-top: 0">
+<div class="option-section row">
   <!-- Option 1: Zarób na swoich zestawach -->
-  <div class="option">
-    <h4>Zarób na swoich zestawach!</h4>
-    <p>
+  <div
+    class="option d-flex flex-column col-12 col-md-6"
+    style="background-color: #e5292f; color: white; text-align: center"
+  >
+    <h2>Zarób na swoich zestawach!</h2>
+    <p style="padding-top: 50px; font-size: 20px">
       Wyślij nam swoje zestawy LEGO, a my je złożymy, wycenimy i odeślemy Ci
       wycenę. W ten sposób możesz zarobić na swoich zestawach!
     </p>
     <a
       href="#"
       class="btn-choose mt-auto"
+      style="background-color: #e5292f; border: solid white 1px"
       data-toggle="modal"
       data-target="#roboklockiModal"
       >WYBIERZ</a
@@ -51,22 +59,22 @@
             <div class="col-12 col-md-4 modal-left">
               <h2>Roboklocki</h2>
               <ul class="steps list-unstyled">
-                  <li class="step active d-flex align-items-center">
-                      <div class="step-number">1</div>
-                      <span class="ml-2">Dane do wysyłki</span>
-                  </li>
-                  <div class="line my-2"></div>
-                  <li class="step d-flex align-items-center">
-                      <div class="step-number">2</div>
-                      <span class="ml-2">Informacje o zestawie</span>
-                  </li>
-                  <div class="line my-2"></div>
-                  <li class="step d-flex align-items-center">
-                      <div class="step-number">3</div>
-                      <span class="ml-2">Metoda płatności</span>
-                  </li>
+                <li class="step active d-flex align-items-center">
+                  <div class="step-number">1</div>
+                  <span class="ml-2">Dane do wysyłki</span>
+                </li>
+                <div class="line my-2"></div>
+                <li class="step d-flex align-items-center">
+                  <div class="step-number">2</div>
+                  <span class="ml-2">Informacje o zestawie</span>
+                </li>
+                <div class="line my-2"></div>
+                <li class="step d-flex align-items-center">
+                  <div class="step-number">3</div>
+                  <span class="ml-2">Metoda płatności</span>
+                </li>
               </ul>
-          </div>
+            </div>
             <div class="col-8 modal-right">
               <h3>Wpisz dane do wysyłki</h3>
               <form>
@@ -88,7 +96,7 @@
                     />
                   </div>
                 </div>
-                <div class="form-row"> 
+                <div class="form-row">
                   <div class="form-group col-md-12">
                     <input
                       type="text"
@@ -150,143 +158,172 @@
       </div>
     </div>
   </div>
-
   <!-- Option 2: Przekaż je naszej fundacji -->
-  <div class="option d-flex flex-column">
-    <h4>Przekaż je naszej fundacji!</h4>
-    <p>
+  <div
+    class="option d-flex flex-column col-12 col-md-6"
+    style="background-color: #26316a; text-align: center"
+  >
+    <h2>Przekaż je naszej fundacji!</h2>
+    <p style="padding-top: 50px; font-size: 20px">
       Jeśli chcesz szybko pozbyć się klocków LEGO, przekaż je naszej fundacji.
     </p>
-    <a href="{% url 'form2' %}" class="btn-choose mt-auto">WYBIERZ</a>
+    <a
+      href="{% url 'form2' %}"
+      class="btn-choose mt-auto"
+      style="background-color: #26316a; border: solid white 1px"
+      >WYBIERZ</a
+    >
+  </div>
+</div>
+
+<div class="container-fluid mb-0">
+  <div class="row">
+    <div class="col-12">
+      <!-- Google Maps Embed -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.816213229239!2d16.984051!3d51.111850999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc1b02a101e93%3A0x92ff44b7e53f22df!2sRoboklocki%C2%AE!5e0!3m2!1suk!2spl!4v1722542441465!5m2!1suk!2spl"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-100 h-100"
+      ></iframe>
+    </div>
   </div>
 </div>
 
 <!-- Footer Section -->
-<footer class="py-5 bg-dark text-white" style="margin-top: 0" id="scrollfooter">
+<footer class="py-3 bg-dark text-white" id="scrollfooter">
   <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-12">
-        <!-- Google Maps Embed -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.816213229239!2d16.984051!3d51.111850999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc1b02a101e93%3A0x92ff44b7e53f22df!2sRoboklocki%C2%AE!5e0!3m2!1suk!2spl!4v1722542441465!5m2!1suk!2spl"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="h-100 w-100"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
     <div class="row">
-      <div class="col-lg-8">
-        <p class="text-center">ROBOKLOCKI SP Z O.O.</p>
+      <div class="col-12 text-center mb-3">
+        <p>
+          <img
+            src="{% static 'main/media/białe.png' %}"
+            alt="RoboKlocki"
+            class="img-fluid w-100 h-auto"
+          />
+        </p>
+      </div>
+      <div class="col-lg-8 col-md-12">
         <div class="row">
           <!-- Wrocław -->
-          <div class="col-4">
-            <h5>WROCŁAW</h5>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <h6>WROCŁAW</h6>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 UL. A.Ostrowskiego 9, 53-238 Wrocław
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">
+              <li class="nav-item mb-1" style="font-weight: bold">
                 Kierownik Projektu
               </li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-size: small">
                 Małgorzata Wiórek
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">Telefon</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Telefon</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 531 488 885/71 307 10 86
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">Mail</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Mail</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 bok@roboklocki.pl
               </li>
             </ul>
           </div>
           <!-- Brzeg -->
-          <div class="col-4">
-            <h5>BRZEG</h5>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <h6>BRZEG</h6>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 UL. Długa 43 (Rynek), 49-306 Brzeg
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">
+              <li class="nav-item mb-1" style="font-weight: bold">
                 Koordynator Ds. Zajęć
               </li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-size: small">
                 Tomasz Urbaniak
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">Telefon</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Telefon</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 790 523 333/77 300 04 65
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">Mail</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Mail</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 turbaniak@roboklocki.pl
               </li>
             </ul>
           </div>
           <!-- Wieruszów -->
-          <div class="col-4">
-            <h5>WIERUSZÓW</h5>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <h6>WIERUSZÓW</h6>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2" style="font-weight: bold">Adres</li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-weight: bold">Adres</li>
+              <li class="nav-item mb-1" style="font-size: small">
                 98-400 Wieruszów
               </li>
-              <li class="nav-item mb-2" style="font-weight: bold">
+              <li class="nav-item mb-1" style="font-weight: bold">
                 Koordynator Ds. Zajęć
               </li>
-              <li class="nav-item mb-2" style="font-size: small">
+              <li class="nav-item mb-1" style="font-size: small">
                 Patrycja Karkoszka
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-12">
         <!-- Contact Form -->
         <section class="text-center">
           <div class="w-100">
-            <h3 class="mb-5">Wyślij nam wiadomość</h3>
+            <h5 class="mb-4">Wyślij nam wiadomość</h5>
             <div class="row">
               <div class="col-lg-12">
-                <form>
-                  <div class="mb-4">
+                <form
+                  id="send_email"
+                  method="POST"
+                  action="{% url 'send_email' %}"
+                >
+                  {% csrf_token %}
+                  <div class="mb-3">
                     <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="form3Example1"
+                        >Imię i Nazwisko:</label
+                      >
                       <input
                         type="text"
                         id="form3Example1"
                         class="form-control"
+                        name="name"
                       />
-                      <label class="form-label" for="form3Example1"
-                        >Imię i Nazwisko:</label
-                      >
                     </div>
                   </div>
-                  <div class="mb-4">
+                  <div class="mb-3">
                     <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="form3Example2"
+                        >Adres email:</label
+                      >
                       <input
                         type="email"
                         id="form3Example2"
                         class="form-control"
+                        name="email"
                       />
-                      <label class="form-label" for="form3Example2"
-                        >Adres email:</label
-                      >
                     </div>
                   </div>
-                  <div class="mb-4">
+                  <div class="mb-3">
                     <div data-mdb-input-init class="form-outline">
-                      <select id="form3Example3" class="form-select">
+                      <label class="form-label" for="form3Example3"
+                        >Sprawa dotyczy placówki w:</label
+                      >
+                      <select
+                        id="form3Example3"
+                        class="form-control"
+                        name="location"
+                      >
                         <option value="" disabled selected>
                           Wybierz placówkę
                         </option>
@@ -294,21 +331,19 @@
                         <option value="Brzeg">Brzeg</option>
                         <option value="Wieruszów">Wieruszów</option>
                       </select>
-                      <label class="form-label" for="form3Example3"
-                        >Sprawa dotyczy placówki w:</label
-                      >
                     </div>
                   </div>
-                  <div class="mb-4">
+                  <div class="mb-3">
                     <div data-mdb-input-init class="form-outline">
-                      <textarea
-                        class="form-control"
-                        id="form4Example3"
-                        rows="4"
-                      ></textarea>
                       <label class="form-label" for="form4Example3"
                         >Treść wiadomości</label
                       >
+                      <textarea
+                        class="form-control"
+                        id="form4Example3"
+                        rows="3"
+                        name="message"
+                      ></textarea>
                     </div>
                   </div>
                   <div class="text-center text-md-start">
@@ -316,7 +351,7 @@
                       type="submit"
                       data-mdb-button-init
                       data-mdb-ripple-init
-                      class="btn btn-danger w-100 mb-5 mb-md-0"
+                      class="btn btn-danger w-100 mb-3"
                     >
                       Wyślij
                     </button>
@@ -330,5 +365,4 @@
     </div>
   </div>
 </footer>
-
 {% endblock %}
