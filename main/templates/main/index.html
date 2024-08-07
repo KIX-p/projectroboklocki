@@ -1,49 +1,115 @@
 {% extends "main/base.html" %} {% load static %} {% block content %}
 <!-- Hero Section -->
-<div class="hero-section position-relative">
+<div class="hero-section position-relative" style="background-color: #e7e8e7">
   <img
-    src="{% static 'main/media/bgcallaction.jpg' %}"
+    src="{% static 'main/media/callaction.png' %}"
     alt="Klocki"
-    class="img-fluid w-100"
+    class="img-fluid w-60"
   />
+  <h1 class="display-4 heroh1" style="color: #26306d">
+    Czy masz bałagan w <span style="color: #e5292f">KLOCKACH</span>?
+  </h1>
   <div class="hero-text position-absolute text-center">
-    <h1 class="display-4">Zalegają Ci klocki?</h1>
-    <a href="#scroll" class="btn btn-primary btn-cta">TAK</a>
+    <a
+      href="#scroll"
+      class="btn btn-primary btn-lg"
+      style="
+        font-size: 1.5rem; /* Zwiększa rozmiar tekstu */
+        padding: 1rem 4rem;
+        background-color: #26306d;
+        border: solid white 1px;
+      "
+      >TAK</a
+    >
   </div>
 </div>
 
-<!-- Flow -->
-<div class="header-text">
-  <div id="scroll"></div>
-  <h2>Let the fun be inspiration for science</h2>
-  <p>"Niech zabawa będzie inspiracją do nauki"</p>
+<!-- About -->
+<div class="container-fluid" style="background-color: #d34c53">
+  <div class="row">
+    <div class="col-md-5 d-flex align-items-center py-5 offset-md-1">
+      <img
+        src="{% static 'main/media/aboutimg.png' %}"
+        alt="Flow"
+        class="img-fluid about-img"
+        style="border-radius: 20px"
+      />
+    </div>
+    <div
+      class="col-md-5 d-flex flex-column justify-content-center text-white text-center pr-5"
+    >
+      <h3 class="py-5">MISJA I program FUNDACJI: Pomaganie przez budowanie!</h3>
+      <p>
+        Ten projekt wykorzystując znane nam wszystkim klocki, pomaga budować
+        kompetencje w obszarze komunikacji i pracy zespołowej. Jak to robimy?
+      </p>
+      <a
+        href="#scroll"
+        class="btn btn-sm mt-5 align-self-center w-25"
+        style="border: solid white 1px; color: white; border-radius: 20px"
+        >Dołącz Do Nas!</a
+      >
+    </div>
+  </div>
 </div>
 
-<!-- Choice Section -->
-<div id="choice-section" class="center-content">
-  <h3>Zdecyduj jak rozwiążesz problem!</h3>
+<!--Connect-->
+<img
+  src="{% static 'main/media/connect.png'%}"
+  class="d-none d-md-block"
+  style="
+    margin-top: -40px;
+    right: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  "
+/>
+
+<!-- Flow -->
+<div
+  class="container-fluid center-content text-center py-5"
+  style="color: #26306d"
+>
+  <div id="scroll"></div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <img
+        src="{% static 'main/media/flowimg.png' %}"
+        class="img-fluid mt-n5"
+        alt="Flow Image"
+      />
+      <h3 class="font-weight-bold mt-4">Zdecyduj co chcesz z tym zrobić?</h3>
+      <p class="font-weight-bold pb-5">
+        NIC - ale podoba ci się inicjatywa i chętnie ją wesprzesz!
+        <span style="color: #e5292f">Wspieraj!</span>
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- Option Section -->
-<div class="option-section row">
+<div class="option-section row w-100">
   <!-- Option 1: Zarób na swoich zestawach -->
   <div
-    class="option d-flex flex-column col-12 col-md-6"
-    style="background-color: #e5292f; color: white; text-align: center"
+    class="option d-flex flex-column col-12 col-md-6 align-items-center text-center text-md-left"
+    style="background-color: #d34c53; color: white"
   >
     <h2>Zarób na swoich zestawach!</h2>
-    <p style="padding-top: 50px; font-size: 20px">
-      Wyślij nam swoje zestawy LEGO, a my je złożymy, wycenimy i odeślemy Ci
-      wycenę. W ten sposób możesz zarobić na swoich zestawach!
-    </p>
+    <ol class"pt-3 pt-md-5" style="font-size:20px;">
+      <li>Wyślij nam swoje Klocki</li>
+      <li>My je złożymy, skompletujemy</li>
+      <li>Odeślemy Ci ułożone - wycenimy wartość złożonych zestawów</li>
+    </ol>
     <a
       href="#"
       class="btn-choose mt-auto"
-      style="background-color: #e5292f; border: solid white 1px"
+      style="background-color: #d34c53; border: solid white 1px"
       data-toggle="modal"
       data-target="#roboklockiModal"
       >WYBIERZ</a
     >
+
     <!-- Modal -->
     <div
       class="modal fade"
@@ -55,8 +121,8 @@
     >
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-          <div class="row">
-            <div class="col-12 col-md-4 modal-left">
+          <div class="row no-gutters">
+            <div class="col-12 col-md-4 modal-left p-4">
               <h2>Roboklocki</h2>
               <ul class="steps list-unstyled">
                 <li class="step active d-flex align-items-center">
@@ -75,7 +141,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-8 modal-right">
+            <div class="col-12 col-md-8 modal-right p-4">
               <h3>Wpisz dane do wysyłki</h3>
               <form>
                 <div class="form-row">
@@ -129,14 +195,17 @@
                   <img
                     src="https://via.placeholder.com/50?text=DHL"
                     alt="DHL"
+                    class="mx-2"
                   />
                   <img
                     src="https://via.placeholder.com/50?text=dpd"
                     alt="dpd"
+                    class="mx-2"
                   />
                   <img
                     src="https://via.placeholder.com/50?text=InPost"
                     alt="InPost"
+                    class="mx-2"
                   />
                 </div>
                 <div class="d-flex justify-content-between mt-4">
@@ -161,34 +230,43 @@
   <!-- Option 2: Przekaż je naszej fundacji -->
   <div
     class="option d-flex flex-column col-12 col-md-6"
-    style="background-color: #26316a; text-align: center"
+    style="background-color: #26306d; text-align: center"
   >
     <h2>Przekaż je naszej fundacji!</h2>
     <p style="padding-top: 50px; font-size: 20px">
-      Jeśli chcesz szybko pozbyć się klocków LEGO, przekaż je naszej fundacji.
+      Chce oddać klocki do fundacji i wespierać ją w działaniach
     </p>
     <a
       href="{% url 'form2' %}"
       class="btn-choose mt-auto"
-      style="background-color: #26316a; border: solid white 1px"
+      style="background-color: #26306d; border: solid white 1px"
       >WYBIERZ</a
     >
   </div>
 </div>
 
-<div class="container-fluid mb-0">
+<!-- Second Flow -->
+<div class="container-fluid mt-0">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center" style="color: #26306d">
+      <img
+        src="{% static 'main/media/secondflow.png' %}"
+        class="img-fluid"
+        alt="Second Flow Image"
+      />
+    </div>
+  </div>
   <div class="row">
     <div class="col-12">
       <!-- Google Maps Embed -->
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.816213229239!2d16.984051!3d51.111850999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc1b02a101e93%3A0x92ff44b7e53f22df!2sRoboklocki%C2%AE!5e0!3m2!1suk!2spl!4v1722542441465!5m2!1suk!2spl"
-        width="100%"
         height="450"
         style="border: 0"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="w-100 h-100"
+        class="w-100 h-auto"
       ></iframe>
     </div>
   </div>
@@ -207,7 +285,7 @@
           />
         </p>
       </div>
-      <div class="col-lg-8 col-md-12">
+      <div class="col-md-12">
         <div class="row">
           <!-- Wrocław -->
           <div class="col-md-4 col-sm-6 mb-3">
@@ -274,93 +352,6 @@
             </ul>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-12">
-        <!-- Contact Form -->
-        <section class="text-center">
-          <div class="w-100">
-            <h5 class="mb-4">Wyślij nam wiadomość</h5>
-            <div class="row">
-              <div class="col-lg-12">
-                <form
-                  id="send_email"
-                  method="POST"
-                  action="{% url 'send_email' %}"
-                >
-                  {% csrf_token %}
-                  <div class="mb-3">
-                    <div data-mdb-input-init class="form-outline">
-                      <label class="form-label" for="form3Example1"
-                        >Imię i Nazwisko:</label
-                      >
-                      <input
-                        type="text"
-                        id="form3Example1"
-                        class="form-control"
-                        name="name"
-                      />
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div data-mdb-input-init class="form-outline">
-                      <label class="form-label" for="form3Example2"
-                        >Adres email:</label
-                      >
-                      <input
-                        type="email"
-                        id="form3Example2"
-                        class="form-control"
-                        name="email"
-                      />
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div data-mdb-input-init class="form-outline">
-                      <label class="form-label" for="form3Example3"
-                        >Sprawa dotyczy placówki w:</label
-                      >
-                      <select
-                        id="form3Example3"
-                        class="form-control"
-                        name="location"
-                      >
-                        <option value="" disabled selected>
-                          Wybierz placówkę
-                        </option>
-                        <option value="Wrocław">Wrocław</option>
-                        <option value="Brzeg">Brzeg</option>
-                        <option value="Wieruszów">Wieruszów</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div data-mdb-input-init class="form-outline">
-                      <label class="form-label" for="form4Example3"
-                        >Treść wiadomości</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="form4Example3"
-                        rows="3"
-                        name="message"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="text-center text-md-start">
-                    <button
-                      type="submit"
-                      data-mdb-button-init
-                      data-mdb-ripple-init
-                      class="btn btn-danger w-100 mb-3"
-                    >
-                      Wyślij
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   </div>
