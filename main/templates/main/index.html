@@ -27,7 +27,7 @@
 <!-- About -->
 <div class="container-fluid" style="background-color: #d34c53">
   <div class="row">
-    <div class="col-md-5 d-flex align-items-center py-5 offset-md-1">
+    <div class="col-md-4 d-flex align-items-center py-5 offset-md-1">
       <img
         src="{% static 'main/media/aboutimg.png' %}"
         alt="Flow"
@@ -36,7 +36,7 @@
       />
     </div>
     <div
-      class="col-md-5 d-flex flex-column justify-content-center text-white text-center pr-5"
+      class="col-md-6 d-flex flex-column justify-content-center text-white text-center pl-5"
     >
       <h3 class="py-5">MISJA I program FUNDACJI: Pomaganie przez budowanie!</h3>
       <p>
@@ -82,25 +82,25 @@
       <h3 class="font-weight-bold mt-4">Zdecyduj co chcesz z tym zrobić?</h3>
       <p class="font-weight-bold pb-5">
         NIC - ale podoba ci się inicjatywa i chętnie ją wesprzesz!
-        <span style="color: #e5292f">Wspieraj!</span>
+        <span class="bold-text" style="color: #e5292f">Wspieraj!</span>
       </p>
     </div>
   </div>
 </div>
 
 <!-- Option Section -->
-<div class="option-section row w-100">
+<div class="option-section row w-100 custom-height-option">
   <!-- Option 1: Zarób na swoich zestawach -->
   <div
     class="option d-flex flex-column col-12 col-md-6 align-items-center text-center text-md-left"
     style="background-color: #d34c53; color: white"
   >
     <h2>Zarób na swoich zestawach!</h2>
-    <ol class"pt-3 pt-md-5" style="font-size:20px;">
-      <li>Wyślij nam swoje Klocki</li>
-      <li>My je złożymy, skompletujemy</li>
-      <li>Odeślemy Ci ułożone - wycenimy wartość złożonych zestawów</li>
-    </ol>
+    <p style="padding-top: 20px; font-size: 20px">1. Wyślij nam swoje Klocki</p>
+    <p style="font-size: 20px">2. My je złożymy, skompletujemy</p>
+    <p style="font-size: 20px">
+      3. Odeślemy Ci ułożone - wycenimy wartość złożonych zestawów
+    </p>
     <a
       href="#"
       class="btn-choose mt-auto"
@@ -109,123 +109,6 @@
       data-target="#roboklockiModal"
       >WYBIERZ</a
     >
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="roboklockiModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="roboklockiModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="row no-gutters">
-            <div class="col-12 col-md-4 modal-left p-4">
-              <h2>Roboklocki</h2>
-              <ul class="steps list-unstyled">
-                <li class="step active d-flex align-items-center">
-                  <div class="step-number">1</div>
-                  <span class="ml-2">Dane do wysyłki</span>
-                </li>
-                <div class="line my-2"></div>
-                <li class="step d-flex align-items-center">
-                  <div class="step-number">2</div>
-                  <span class="ml-2">Informacje o zestawie</span>
-                </li>
-                <div class="line my-2"></div>
-                <li class="step d-flex align-items-center">
-                  <div class="step-number">3</div>
-                  <span class="ml-2">Metoda płatności</span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-12 col-md-8 modal-right p-4">
-              <h3>Wpisz dane do wysyłki</h3>
-              <form>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="firstName"
-                      placeholder="Imię"
-                    />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="lastName"
-                      placeholder="Nazwisko"
-                    />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="address"
-                      placeholder="Adres"
-                    />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="postalCode"
-                      placeholder="Kod pocztowy"
-                    />
-                  </div>
-                  <div class="form-group col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="city"
-                      placeholder="Miejscowość"
-                    />
-                  </div>
-                </div>
-                <h4 class="text-center">Wybierz sposób dostawy</h4>
-                <div class="delivery-options d-flex justify-content-center">
-                  <img
-                    src="https://via.placeholder.com/50?text=DHL"
-                    alt="DHL"
-                    class="mx-2"
-                  />
-                  <img
-                    src="https://via.placeholder.com/50?text=dpd"
-                    alt="dpd"
-                    class="mx-2"
-                  />
-                  <img
-                    src="https://via.placeholder.com/50?text=InPost"
-                    alt="InPost"
-                    class="mx-2"
-                  />
-                </div>
-                <div class="d-flex justify-content-between mt-4">
-                  <button
-                    type="button"
-                    class="btn btn-secondary flex-grow-1 mx-1"
-                    data-dismiss="modal"
-                  >
-                    POWRÓT
-                  </button>
-                  <button type="button" class="btn btn-danger flex-grow-1 mx-1">
-                    DALEJ
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- Option 2: Przekaż je naszej fundacji -->
   <div
@@ -356,4 +239,248 @@
     </div>
   </div>
 </footer>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="roboklockiModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="roboklockiModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-4 modal-left p-4">
+          <h2>Roboklocki</h2>
+          <ul class="steps list-unstyled">
+            <li class="step active d-flex align-items-center">
+              <div class="step-number">1</div>
+              <span class="ml-2">Dane do wysyłki</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">2</div>
+              <span class="ml-2">Informacje o zestawie</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">3</div>
+              <span class="ml-2">Metoda płatności</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-8 modal-right p-4">
+          <h3>Wpisz dane do wysyłki</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Imię"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Nazwisko"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Adres"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="postalCode"
+                  placeholder="Kod pocztowy"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Miejscowość"
+                />
+              </div>
+            </div>
+            <h4 class="text-center">Wybierz sposób dostawy</h4>
+            <div class="delivery-options d-flex justify-content-center">
+              <img
+                src="https://via.placeholder.com/50?text=DHL"
+                alt="DHL"
+                class="mx-2"
+              />
+              <img
+                src="https://via.placeholder.com/50?text=dpd"
+                alt="dpd"
+                class="mx-2"
+              />
+              <img
+                src="https://via.placeholder.com/50?text=InPost"
+                alt="InPost"
+                class="mx-2"
+              />
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button
+                type="button"
+                class="btn btn-secondary flex-grow-1 mx-1"
+                id="backButton"
+                data-dismiss="modal"
+              >
+                POWRÓT
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger flex-grow-1 mx-1"
+                id="nextButton"
+              >
+                DALEJ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div
+  class="modal fade"
+  id="formularzeModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="formularzeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-4 modal-left p-4">
+          <h2>Roboklocki</h2>
+          <ul class="steps list-unstyled">
+            <li class="step active d-flex align-items-center">
+              <div class="step-number">1</div>
+              <span class="ml-2">Dane do wysyłki</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">2</div>
+              <span class="ml-2">Informacje o zestawie</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">3</div>
+              <span class="ml-2">Metoda płatności</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-8 modal-right p-4">
+          <h3>Wpisz dane do wysyłki</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Imię"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Nazwisko"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Adres"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="postalCode"
+                  placeholder="Kod pocztowy"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="Miejscowość"
+                />
+              </div>
+            </div>
+            <h4 class="text-center">Wybierz sposób dostawy</h4>
+            <div class="delivery-options d-flex justify-content-center">
+              <img
+                src="https://via.placeholder.com/50?text=DHL"
+                alt="DHL"
+                class="mx-2"
+              />
+              <img
+                src="https://via.placeholder.com/50?text=dpd"
+                alt="dpd"
+                class="mx-2"
+              />
+              <img
+                src="https://via.placeholder.com/50?text=InPost"
+                alt="InPost"
+                class="mx-2"
+              />
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button
+                type="button"
+                class="btn btn-secondary flex-grow-1 mx-1"
+                id="backButton"
+                data-dismiss="modal"
+              >
+                POWRÓT
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger flex-grow-1 mx-1"
+                id="nextButton"
+              >
+                DALEJ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

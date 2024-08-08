@@ -353,3 +353,7 @@ html {
   margin: 0;
   padding: 0;
 }
+
+.custom-height-option {
+  height: 350px;
+}
