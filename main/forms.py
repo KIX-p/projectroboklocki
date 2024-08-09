@@ -1,12 +1,16 @@
 from django import forms 
 
-class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, required=True, min_length=3)
-    email = forms.EmailField(required=True, max_length=150, min_length=5)
-    location = forms.ChoiceField(choices=[('Wrocław', 'Wrocław'), ('Brzeg', 'Brzeg'), ('Wieruszów', 'Wieruszów')], required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+class ShippingForm(forms.Form):
+    first_name = forms.CharField(max_length=100, label='Imię')
+    last_name = forms.CharField(max_length=100, label='Nazwisko')
+    email = forms.EmailField(label='E-mail')
+    phone = forms.CharField(max_length=15, label='Numer telefonu')
+    address = forms.CharField(max_length=255, label='Adres')
+    postal_code = forms.CharField(max_length=10, label='Kod pocztowy')
+    city = forms.CharField(max_length=100, label='Miejscowość')
 
-    def clean(self):
-        cleaned_data = super().clean()
-        
-        return cleaned_data
+    def clean_phone(self):
+        phone = self.cleaned_data['phone']
+        if not phone.startswith('+48'):
+            raise forms.ValidationError('Numer telefonu musi zaczynać się od +48')
+        return phone

@@ -127,7 +127,7 @@
       Chce oddać klocki do fundacji i wespierać ją w działaniach
     </p>
     <a
-      href="{% url 'form2' %}"
+      href="#"
       class="btn-choose mt-auto"
       style="background-color: #26306d; border: solid white 1px; font-family: Raleway;"
       >WYBIERZ</a
@@ -285,41 +285,26 @@
         </div>
         <div class="col-12 col-md-8 modal-right p-4">
           <h3>Wpisz dane do wysyłki</h3>
-          <form>
+          <form method="post" action="{% url 'shipping'%}">
+            {% csrf_token %}
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="firstName"
-                  placeholder="Imię"
-                />
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
               </div>
               <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastName"
-                  placeholder="Nazwisko"
-                />
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="E-mail"
-                />
+                {{ form.email.label_tag }}
+                {{ form.email }}
               </div>
               <div class="form-group col-md-6">
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="phone"
-                  placeholder="Numer telefonu"
-                />
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
               </div>
             </div>
             <div class="form-row">
@@ -349,7 +334,8 @@
                   placeholder="Miejscowość"
                 />
               </div>
-            </div>
+            </div> 
+
             <h3 class="text-center">Wybierz sposób dostawy</h3>
             <div class="delivery-options d-flex justify-content-center">
               <img
