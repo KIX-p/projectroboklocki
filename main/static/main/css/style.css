@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,600;1,600&display=swap');
 
 body {
@@ -61,6 +61,7 @@ body {
 
 .heroh1 {
   font-family: "Raleway", sans-serif;
+  font-weight: 600;
   position: absolute;
   top: 12%;
   left: 50%;
@@ -70,15 +71,24 @@ body {
   width: 100%;
 }
 
+
 p{
   font-family: "Krub", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-h5{
+h5, h3, h2, .font-headings{
   font-family: "Raleway";
+  font-weight: 600;
 }
+
+input, label, select, option, .font-text{
+  font-family: "Krub";
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 @media (max-width: 768px) {
   .hero-text h1 {
@@ -389,3 +399,67 @@ html {
   cursor: pointer;
 }
 
+.primaryboxes {
+    display: flex;
+    flex-wrap: nowrap; /* Elementy nie zawijają się */
+    gap: 20px; /* Odstęp między elementami */
+  }
+
+  /* Na mniejszych ekranach zawijanie */
+  @media (max-width: 768px) {
+    .option-section {
+      flex-wrap: wrap; /* Elementy mogą się zawijać */
+    }
+  }
+
+.primarycontent1{
+  background-color: #F8F8F8;
+  text-align: center;
+}
+
+.primarycontent1 h3{
+  font-family: Raleway;
+  color: #26306d;
+}
+
+.primarycontentxt h1{
+  font-family: "Raleway", sans-serif;
+  color: #26306d;
+  padding: 0;
+}
+
+.primarycontentxt p{
+  color: #26306d;
+  font-size: large;
+  margin-top: 20px;
+}
+
+.primarycontentxt span{
+  color: #e5292f;
+}
+
+.primarycontent2{
+  background-color: #d34c53;
+  color: white;
+  border-radius: 10px;
+}
+
+#PC1{
+  padding-top: 20px;
+}
+
+.primarycontent2 a{
+  background-color:#d34c53;
+  border: solid white 1px;
+}
+
+.primarycontent3{
+  background-color: #26306d;
+  text-align: center;
+  border-radius: 10px
+}
+
+.primarycontent3 a{
+  background-color: #26306d;
+  border: solid white 1px
+}
