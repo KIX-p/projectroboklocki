@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,600;1,600&display=swap');
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
@@ -57,6 +60,7 @@ body {
 }
 
 .heroh1 {
+  font-family: "Raleway", sans-serif;
   position: absolute;
   top: 12%;
   left: 50%;
@@ -64,6 +68,16 @@ body {
   align-items: center;
   color: white;
   width: 100%;
+}
+
+p{
+  font-family: "Krub", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h5{
+  font-family: "Raleway";
 }
 
 @media (max-width: 768px) {
