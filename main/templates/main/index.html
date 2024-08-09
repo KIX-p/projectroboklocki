@@ -79,55 +79,38 @@
         class="img-fluid mt-n5"
         alt="Flow Image"
       />
-      <h3 class="font-weight-bold mt-4">Zdecyduj co chcesz z tym zrobić?</h3>
-      <p class="font-weight-bold pb-5" style="font-family: Krub, sans-serif;
-      font-weight: 700;
-      font-style: normal;">
-        NIC - ale podoba ci się inicjatywa i chętnie ją wesprzesz!
-        <span class="bold-text" style="color: #e5292f">Wspieraj!</span>
-      </p>
     </div>
   </div>
 </div>
 
 <!-- Option Section -->
-<div class="option-section row w-100 custom-height-option">
-  <!-- Option 1: Zarób na swoich zestawach -->
-  <div
-    class="option d-flex flex-column col-12 col-md-6 align-items-center text-center text-md-left"
-    style="background-color: #d34c53; color: white"
-  >
-    <h2>Zarób na swoich zestawach!</h2>
-    <p style="padding-top: 20px; font-size: 20px ">1. Wyślij nam swoje Klocki</p>
-    <p style="font-size: 20px">2. My je złożymy, skompletujemy</p>
-    <p style="font-size: 20px">
-      3. Odeślemy Ci ułożone - wycenimy wartość złożonych zestawów
-    </p>
-    <a
-      href="#"
-      class="btn-choose mt-auto font-headings"
-      style="background-color: #d34c53; border: solid white 1px;"
-      data-toggle="modal"
-      data-target="#firstpage"
-      >WYBIERZ</a
-    >
-  </div>
-  <!-- Option 2: Przekaż je naszej fundacji -->
-  <div
-    class="option d-flex flex-column col-12 col-md-6"
-    style="background-color: #26306d; text-align: center"
-  >
-    <h2>Przekaż je naszej fundacji!</h2>
-    <p style="padding-top: 50px; font-size: 20px">
-      Chce oddać klocki do fundacji i wespierać ją w działaniach
-    </p>
-    <a
-      href="{% url 'form2' %}"
-      class="btn-choose mt-auto font-headings"
-      style="background-color: #26306d; border: solid white 1px;"
-      >WYBIERZ</a
-    >
-  </div>
+<div class="container-fluid primarycontent1">
+    <div class="container-fluid primarycontentxt">
+      <h1 class="font-weight-bold mt-4">Zdecyduj co chcesz z tym zrobić?</h1>
+        <p class="font-weight-bold pb-5">
+        NIC - ale podoba ci się inicjatywa i chętnie ją wesprzesz!
+        <span class="bold-text">Wspieraj!</span>
+        </p>  
+    </div>
+    
+    <div class="container-fluid primaryboxes">
+        <!-- Option 1: Zarób na swoich zestawach -->
+        <div class="primarycontent2 option d-flex flex-column col-12 col-md-6 align-items-center text-center text-md-left">
+            <h2>Zarób na swoich zestawach!</h2>
+            <p id="PC1">1. Wyślij nam swoje Klocki</p>
+            <p>2. My je złożymy, skompletujemy</p>
+            <p>3. Odeślemy Ci ułożone - wycenimy wartość złożonych zestawów</p>
+            <a href="#" class="btn-choose mt-auto" data-toggle="modal" data-target="#firstpage">WYBIERZ</a>
+        </div>
+
+        <!-- Option 2: Przekaż je naszej fundacji -->
+        <div class="primarycontent3 option d-flex flex-column col-12 col-md-6">
+            <h2>Przekaż je naszej fundacji!</h2>
+            <p>Chce oddać klocki do fundacji i wspierać ją w działaniach</p>
+            <a href="{% url 'form2' %}" class="btn-choose mt-auto">WYBIERZ</a>
+        </div>
+    </div>
+    
 </div>
 
 <!-- Second Flow -->
