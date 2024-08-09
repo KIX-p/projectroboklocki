@@ -93,7 +93,7 @@
   <!-- Option 1: Zarób na swoich zestawach -->
   <div
     class="option d-flex flex-column col-12 col-md-6 align-items-center text-center text-md-left"
-    style="background-color: #d34c53; color: white"
+    style="background-color: #d34c53; color: white;"
   >
     <h2>Zarób na swoich zestawach!</h2>
     <p style="padding-top: 20px; font-size: 20px">1. Wyślij nam swoje Klocki</p>
@@ -106,7 +106,7 @@
       class="btn-choose mt-auto"
       style="background-color: #d34c53; border: solid white 1px"
       data-toggle="modal"
-      data-target="#roboklockiModal"
+      data-target="#firstpage"
       >WYBIERZ</a
     >
   </div>
@@ -240,21 +240,21 @@
   </div>
 </footer>
 
-<!-- Modal -->
+<!-- Modal 1 -->
 <div
-  class="modal fade"
-  id="roboklockiModal"
+  class="modal fade modal-1"
+  id="firstpage"
   tabindex="-1"
   role="dialog"
-  aria-labelledby="roboklockiModalLabel"
+  aria-labelledby="formularzeModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="row no-gutters">
         <div class="col-12 col-md-4 modal-left p-4">
-          <h2>Roboklocki</h2>
-          <ul class="steps list-unstyled">
+          <img src="{% static 'main/media/białe.png' %}" alt="RoboKlocki" class="img-fluid" />
+          <ul class="steps list-unstyled pt-5">
             <li class="step active d-flex align-items-center">
               <div class="step-number">1</div>
               <span class="ml-2">Dane do wysyłki</span>
@@ -269,6 +269,11 @@
               <div class="step-number">3</div>
               <span class="ml-2">Metoda płatności</span>
             </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">4</div>
+              <span class="ml-2">Podsumowanie</span>
+            </li> 
           </ul>
         </div>
         <div class="col-12 col-md-8 modal-right p-4">
@@ -289,6 +294,24 @@
                   class="form-control"
                   id="lastName"
                   placeholder="Nazwisko"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="E-mail"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Numer telefonu"
                 />
               </div>
             </div>
@@ -320,7 +343,7 @@
                 />
               </div>
             </div>
-            <h4 class="text-center">Wybierz sposób dostawy</h4>
+            <h3 class="text-center">Wybierz sposób dostawy</h3>
             <div class="delivery-options d-flex justify-content-center">
               <img
                 src="https://via.placeholder.com/50?text=DHL"
@@ -343,7 +366,6 @@
                 type="button"
                 class="btn btn-secondary flex-grow-1 mx-1"
                 id="backButton"
-                data-dismiss="modal"
               >
                 POWRÓT
               </button>
@@ -362,22 +384,198 @@
   </div>
 </div>
 
+
 <!-- Modal 2 -->
 <div
-  class="modal fade"
-  id="formularzeModal"
+  class="modal fade modal-2"
+  id="secondpage"
   tabindex="-1"
   role="dialog"
   aria-labelledby="formularzeModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="row no-gutters">
         <div class="col-12 col-md-4 modal-left p-4">
-          <h2>Roboklocki</h2>
-          <ul class="steps list-unstyled">
+          <img src="{% static 'main/media/białe.png' %}" alt="RoboKlocki" class="img-fluid" />
+          <ul class="steps list-unstyled pt-5">
+            <li class="step d-flex align-items-center">
+              <div class="step-number">1</div>
+              <span class="ml-2">Dane do wysyłki</span>
+            </li>
+            <div class="line my-2"></div>
             <li class="step active d-flex align-items-center">
+              <div class="step-number">2</div>
+              <span class="ml-2">Informacje o zestawie</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">3</div>
+              <span class="ml-2">Metoda płatności</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">4</div>
+              <span class="ml-2">Podsumowanie</span>
+            </li> 
+          </ul>
+        </div>
+        <div class="col-md-8 modal-right p-4">
+          <h3 class="text-center">Czy zestaw jest złożony?</h3>
+          <form>
+            <div class="form-row justify-content-center pr-5">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="assembled"
+                  id="assembledYes"
+                  value="yes"
+                />
+                <label class="form-check-label" for="assembledYes">Tak</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="assembled"
+                  id="assembledNo"
+                  value="no"
+                />
+                <label class="form-check-label" for="assembledNo">Nie</label>
+              </div>
+            </div>
+            <h3 class="text-center">Określ stan w jakim jest zestaw</h3>
+            <div class="form-group">
+              <select class="form-control" id="condition">
+                <option value="excellent">Wzorowy</option>
+                <option value="very-good">Bardzo dobry</option>
+                <option value="good">Dobry</option>
+                <option value="bad">Zły</option>
+              </select>
+            </div>
+            <h3 class="text-center">Załączniki</h3>
+            <div class="upload-box">
+              <input type="file" class="form-control-file " id="attachments" multiple />
+              <button class="btn custom-upload-button">Dodaj plik</button>
+            </div>
+            <h3 class="text-center">Dodatkowe informacje</h3>
+            <div class="form-group">
+              <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button
+                type="button"
+                class="btn btn-secondary flex-grow-1 mx-1"
+                id="backButton1"
+              >
+                POWRÓT
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger flex-grow-1 mx-1"
+                id="nextButton1"
+              >
+                DALEJ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal 3 -->
+<div
+  class="modal fade modal-3"
+  id="thirdpage"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="formularzeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-4 modal-left p-4">
+          <img src="{% static 'main/media/białe.png' %}" alt="RoboKlocki" class="img-fluid" />
+          <ul class="steps list-unstyled pt-5">
+            <li class="step d-flex align-items-center">
+              <div class="step-number">1</div>
+              <span class="ml-2">Dane do wysyłki</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">2</div>
+              <span class="ml-2">Informacje o zestawie</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step active d-flex align-items-center">
+              <div class="step-number">3</div>
+              <span class="ml-2">Metoda płatności</span>
+            </li>
+            <div class="line my-2"></div>
+            <li class="step d-flex align-items-center">
+              <div class="step-number">4</div>
+              <span class="ml-2">Podsumowanie</span>
+            </li> 
+          </ul>
+        </div>
+        <div class="col-12 col-md-8 modal-right p-4">
+          <h3>Wybierz metodę płatności</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <select class="form-control" id="paymentMethod">
+                  <option value="credit-card">Karta kredytowa</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bank-transfer">Przelew bankowy</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button
+                type="button"
+                class="btn btn-secondary flex-grow-1 mx-1"
+                id="backButton2"
+              >
+                POWRÓT
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger flex-grow-1 mx-1"
+                id="nextButton2"
+              >
+                DALEJ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div
+  class="modal fade modal-4"
+  id="fourthpage"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="formularzeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-4 modal-left p-4">
+          <img src="{% static 'main/media/białe.png' %}" alt="RoboKlocki" class="img-fluid" />
+          <ul class="steps list-unstyled pt-5">
+            <li class="step d-flex align-items-center">
               <div class="step-number">1</div>
               <span class="ml-2">Dane do wysyłki</span>
             </li>
@@ -391,90 +589,42 @@
               <div class="step-number">3</div>
               <span class="ml-2">Metoda płatności</span>
             </li>
+            <div class="line my-2"></div>
+            <li class="step active d-flex align-items-center">
+              <div class="step-number">4</div>
+              <span class="ml-2">Podsumowanie</span>
+            </li>
           </ul>
         </div>
         <div class="col-12 col-md-8 modal-right p-4">
-          <h3>Wpisz dane do wysyłki</h3>
+          <h3 class="text-center">Podsumowanie</h3>
           <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="firstName"
-                  placeholder="Imię"
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastName"
-                  placeholder="Nazwisko"
-                />
-              </div>
+            <div class="form-group">
+              <label for="shippingInfo">Dane do wysyłki:</label>
+              <p id="shippingInfo">[Dane do wysyłki z Modalu 1]</p>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-12">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address"
-                  placeholder="Adres"
-                />
-              </div>
+            <div class="form-group">
+              <label for="setInfo">Informacje o zestawie:</label>
+              <p id="setInfo">[Informacje o zestawie z Modalu 2]</p>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="postalCode"
-                  placeholder="Kod pocztowy"
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="city"
-                  placeholder="Miejscowość"
-                />
-              </div>
-            </div>
-            <h4 class="text-center">Wybierz sposób dostawy</h4>
-            <div class="delivery-options d-flex justify-content-center">
-              <img
-                src="https://via.placeholder.com/50?text=DHL"
-                alt="DHL"
-                class="mx-2"
-              />
-              <img
-                src="https://via.placeholder.com/50?text=dpd"
-                alt="dpd"
-                class="mx-2"
-              />
-              <img
-                src="https://via.placeholder.com/50?text=InPost"
-                alt="InPost"
-                class="mx-2"
-              />
+            <div class="form-group">
+              <label for="paymentInfo">Metoda płatności:</label>
+              <p id="paymentInfo">[Metoda płatności z Modalu 3]</p>
             </div>
             <div class="d-flex justify-content-between mt-4">
               <button
                 type="button"
                 class="btn btn-secondary flex-grow-1 mx-1"
-                id="backButton"
-                data-dismiss="modal"
+                id="backButton3"
               >
                 POWRÓT
               </button>
               <button
                 type="button"
                 class="btn btn-danger flex-grow-1 mx-1"
-                id="nextButton"
+                id="confirmButton"
               >
-                DALEJ
+                POTWIERDŹ
               </button>
             </div>
           </form>
